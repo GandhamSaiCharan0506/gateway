@@ -22,7 +22,7 @@ class RegisterSchema(BaseModel):
 from fastapi import HTTPException
 
 @router.post("/login")
-async def login(data: LoginRequest):
+async def login(data: LoginSchema):
     async with httpx.AsyncClient() as client:
         response = await client.post(
             f"{SPRING_URL}/auth/login",
@@ -37,7 +37,7 @@ async def login(data: LoginRequest):
 
     return response.json()
 @router.post("/register")
-async def register(data: RegisterRequest):
+async def register(data: RegisterSchema):
     async with httpx.AsyncClient() as client:
         response = await client.post(
             f"{SPRING_URL}/auth/register",
