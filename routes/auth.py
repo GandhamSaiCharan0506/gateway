@@ -6,7 +6,7 @@ router = APIRouter(
     prefix="/auth"
 )
 
-SPRING_URL = "http://127.0.0.1:8080"
+SPRING_URL = "https://spring-han7.onrender.com"
 
 class LoginSchema(BaseModel):
 
